@@ -1,6 +1,13 @@
+#!/usr/bin/env python
+#
+# This file is part of the optimadeapi project, which is covered by the MIT License
+# Details are given in the LICENSE file in the root of this project.
+# (c) Rickard Armiento, 2016-2017
+
 import sys, os
 import cgitb
 import json
+import urllib2
 
 def init(handle_errors=True):
     if handle_errors:
@@ -42,3 +49,16 @@ def output_json(d,pretty=True):
         print json.dumps(d, sort_keys=True, indent=4, separators=(',', ': '))
     else:
         print json.dumps(d)
+
+def input_json(jsonstr):
+    return json.loads(jsonstr)
+
+def comma_separated_to_list(s):
+    return s.split(",")
+
+def make_get_request(url,headers={}):
+    request = urllib2.Request(url, headers=headers)
+    return urllib2.urlopen(request).read()
+    
+    
+    

@@ -1,0 +1,10 @@
+[main]
+base_url=http://minapi.openmaterialsdb.se/
+source_database=materialsproject.org
+debug=True
+
+[materialsproject.org]
+api_url=https://www.materialsproject.org/rest/v1/
+api_type=mapi
+mapi_key=<enter your key here>
+max_entries=100
